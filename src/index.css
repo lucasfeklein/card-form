@@ -32,6 +32,7 @@ body {
   background-repeat: no-repeat;
   width: 418px;
   height: 230px;
+  color: white;
 }
 
 .front-card {
@@ -45,6 +46,7 @@ body {
 .back-card {
   background-image: url("/bg-card-back.png");
   align-self: flex-end;
+  position: relative;
 }
 
 .color-white {
@@ -54,4 +56,10 @@ body {
 .card-number {
   font-size: 32px;
   margin-top: 30px;
+}
+
+.cvv-number {
+  position: absolute;
+  top: 103px;
+  right: 50px;
 }
