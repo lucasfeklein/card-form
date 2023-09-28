@@ -14,7 +14,13 @@ function App() {
           <p className="cvv-number">000</p>
         </div>
       </div>
-      <div></div>
+      <div className="inputs-container">
+        <div className="second-inputs-container">
+          <input type="text" />
+          <input type="number" />
+          <button>Confirm</button>
+        </div>
+      </div>
     </div>
   );
 }
