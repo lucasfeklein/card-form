@@ -46,7 +46,12 @@ function App() {
         <div className="front-card">
           <img src="./card-logo.svg" width={80} />
           <p className="card-number">
-            {cardData.number ? cardData.number : "0000 0000 0000 0000"}
+            {cardData.number
+              ? cardData.number
+                  .replace(/\D/g, "") // Remove non-digit characters
+                  .padEnd(16, "0") // Pad to 16 characters with '0's
+                  .replace(/(\d{4})/g, "$1 ") // Add a space after every four digits
+              : "0000 0000 0000 0000"}
           </p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <p>{cardData.name ? cardData.name.toUpperCase() : "JOE DOE"}</p>
