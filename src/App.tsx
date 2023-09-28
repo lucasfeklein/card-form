@@ -24,7 +24,7 @@ function App() {
             CARD NUMBER
             <input type="number" placeholder="1234 5678 9123 0000" />
           </label>
-          <div style={{ display: "flex", gap: "20px" }}>
+          <div style={{ display: "flex", gap: "15px" }}>
             <div>
               <label className="label-container">
                 EXP. DATE (MM/YY)
@@ -47,18 +47,14 @@ function App() {
                 </div>
               </label>
             </div>
-            <div
-              style={{
-                display: "flex",
-                gap: "8px",
-                flex: "1",
-              }}
-            >
-              <label style={{ width: "100%" }} className="label-container">
-                CVC
-                <input type="number" placeholder="123" />
-              </label>
-            </div>
+            <label className="label-container">
+              CVC
+              <input
+                type="number"
+                placeholder="123"
+                style={{ width: "100%" }}
+              />
+            </label>
           </div>
           <button>Confirm</button>
         </div>
