@@ -9,6 +9,9 @@ body {
 
 .container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
   height: 100vh;
   background-image: url("/bg-main-desktop.png");
   background-repeat: no-repeat;
@@ -26,7 +29,6 @@ body {
 .inputs-container {
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 50%;
 }
