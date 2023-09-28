@@ -37,9 +37,21 @@ body {
 .front-card {
   background-image: url("/bg-card-front.png");
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .back-card {
   background-image: url("/bg-card-back.png");
   align-self: flex-end;
+}
+
+.color-white {
+  color: white;
+}
+
+.card-number {
+  font-size: 32px;
+  margin-top: 30px;
 }
