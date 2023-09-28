@@ -56,8 +56,13 @@ function App() {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <p>{cardData.name ? cardData.name.toUpperCase() : "JOE DOE"}</p>
             <p>
-              {cardData.expDate.month ? cardData.expDate.month : "00"}/
-              {cardData.expDate.year ? cardData.expDate.year : "00"}
+              {cardData.expDate.month
+                ? cardData.expDate.month.padStart(2, "0")
+                : "00"}
+              /
+              {cardData.expDate.year
+                ? cardData.expDate.year.padStart(2, "0")
+                : "00"}
             </p>
           </div>
         </div>
