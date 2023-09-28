@@ -34,6 +34,8 @@ body {
 .second-inputs-container {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  width: 50%;
 }
 
 .front-card,
@@ -72,4 +74,38 @@ body {
   position: absolute;
   top: 103px;
   right: 50px;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: hsl(278, 68%, 11%);
+  gap: 5px;
+}
+
+input {
+  height: 40px;
+  font-family: "Space Grotesk", sans-serif;
+  border: 1px solid hsl(270, 3%, 87%);
+  padding-left: 15px;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+input:focus {
+  outline-color: hsl(278, 68%, 11%);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button {
 }
