@@ -98,7 +98,7 @@ input::placeholder {
 }
 
 input:focus {
-  outline-color: hsl(278, 68%, 11%);
+  outline-color: hsl(249, 99%, 64%);
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -108,4 +108,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 button {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 5px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
 }

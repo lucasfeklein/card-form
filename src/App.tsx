@@ -6,7 +6,7 @@ function App() {
           <img src="./card-logo.svg" width={80} />
           <p className="card-number">0000 0000 0000 0000</p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <p>Joe Doe</p>
+            <p>JOE DOE</p>
             <p>00/00</p>
           </div>
         </div>
