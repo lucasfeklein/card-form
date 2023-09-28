@@ -47,7 +47,7 @@ function App() {
                 </div>
               </label>
             </div>
-            <label className="label-container">
+            <label style={{ width: "100%" }} className="label-container">
               CVC
               <input
                 type="number"

@@ -37,7 +37,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 50%;
+  width: 60%;
+  min-width: 300px;
 }
 
 .front-card,
@@ -120,4 +121,5 @@ button {
   font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
 }
