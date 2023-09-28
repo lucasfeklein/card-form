@@ -1,4 +1,31 @@
+import { useState } from "react";
+
 function App() {
+  const [cardData, setCardData] = useState({
+    name: "",
+    number: "",
+    expDate: {
+      month: "",
+      year: "",
+    },
+    cvc: "",
+  });
+
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+
+    if (name === "month" || name === "year") {
+      setCardData((prevCardData) => ({
+        ...prevCardData,
+        expDate: { ...prevCardData.expDate, [name]: value.slice(0, 2) },
+      }));
+    } else {
+      setCardData((prevCardData) => ({ ...prevCardData, [name]: value }));
+    }
+  }
+
+  console.log(cardData);
+
   return (
     <div className="container">
       <div className="cards-container">
@@ -18,11 +45,23 @@ function App() {
         <div className="second-inputs-container">
           <label className="label-container">
             CARDHOLER NAME
-            <input type="text" placeholder="Joe Doe" />
+            <input
+              name="name"
+              value={cardData.name}
+              type="text"
+              placeholder="Joe Doe"
+              onChange={handleInputChange}
+            />
           </label>
           <label className="label-container">
             CARD NUMBER
-            <input type="number" placeholder="1234 5678 9123 0000" />
+            <input
+              name="number"
+              value={cardData.number}
+              type="number"
+              placeholder="1234 5678 9123 0000"
+              onChange={handleInputChange}
+            />
           </label>
           <div style={{ display: "flex", gap: "15px" }}>
             <div>
@@ -35,14 +74,22 @@ function App() {
                   }}
                 >
                   <input
+                    value={cardData.expDate.month}
+                    name="month"
                     style={{ width: "70px" }}
                     type="number"
+                    maxLength={2}
                     placeholder="MM"
+                    onChange={handleInputChange}
                   />
                   <input
+                    value={cardData.expDate.year}
+                    name="year"
                     style={{ width: "70px" }}
                     type="number"
+                    maxLength={2}
                     placeholder="YY"
+                    onChange={handleInputChange}
                   />
                 </div>
               </label>
@@ -50,9 +97,12 @@ function App() {
             <label style={{ width: "100%" }} className="label-container">
               CVC
               <input
+                value={cardData.cvc}
+                name="cvc"
                 type="number"
                 placeholder="123"
                 style={{ width: "100%" }}
+                onChange={handleInputChange}
               />
             </label>
           </div>
