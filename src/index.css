@@ -6,3 +6,17 @@
 body {
   font-family: "Space Grotesk", sans-serif;
 }
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-image: url("/bg-main-desktop.png");
+  background-repeat: no-repeat;
+}
+
+.card-container {
+  width: 50%;
+}
+
+.inputs-container {
+}
