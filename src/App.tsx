@@ -12,12 +12,17 @@ function App() {
   });
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    if (name === "cvc") {
+      value = value.slice(0, 3);
+    }
 
     if (name === "month" || name === "year") {
+      value = value.slice(0, 2);
       setCardData((prevCardData) => ({
         ...prevCardData,
-        expDate: { ...prevCardData.expDate, [name]: value.slice(0, 2) },
+        expDate: { ...prevCardData.expDate, [name]: value },
       }));
     } else {
       setCardData((prevCardData) => ({ ...prevCardData, [name]: value }));
@@ -33,12 +38,15 @@ function App() {
           <img src="./card-logo.svg" width={80} />
           <p className="card-number">0000 0000 0000 0000</p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <p>JOE DOE</p>
-            <p>00/00</p>
+            <p>{cardData.name ? cardData.name.toUpperCase() : "JOE DOE"}</p>
+            <p>
+              {cardData.expDate.month ? cardData.expDate.month : "00"}/
+              {cardData.expDate.year ? cardData.expDate.year : "00"}
+            </p>
           </div>
         </div>
         <div className="back-card">
-          <p className="cvv-number">000</p>
+          <p className="cvv-number">{cardData.cvc ? cardData.cvc : "000"}</p>
         </div>
       </div>
       <div className="inputs-container">
@@ -101,6 +109,7 @@ function App() {
                 name="cvc"
                 type="number"
                 placeholder="123"
+                maxLength={3}
                 style={{ width: "100%" }}
                 onChange={handleInputChange}
               />
