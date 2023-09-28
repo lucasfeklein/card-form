@@ -14,9 +14,32 @@ body {
   background-repeat: no-repeat;
 }
 
-.card-container {
+.cards-container {
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .inputs-container {
+}
+
+.front-card,
+.back-card {
+  background-size: contain; /* Ensures the image covers the entire container */
+  background-repeat: no-repeat;
+  width: 418px;
+  height: 230px;
+}
+
+.front-card {
+  background-image: url("/bg-card-front.png");
+  padding: 30px;
+}
+
+.back-card {
+  background-image: url("/bg-card-back.png");
+  align-self: flex-end;
 }
