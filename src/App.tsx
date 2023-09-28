@@ -67,7 +67,9 @@ function App() {
           </div>
         </div>
         <div className="back-card">
-          <p className="cvv-number">{cardData.cvc ? cardData.cvc : "000"}</p>
+          <p className="cvv-number">
+            {cardData.cvc ? cardData.cvc.padStart(3, "0") : "000"}
+          </p>
         </div>
       </div>
       <div className="inputs-container">
