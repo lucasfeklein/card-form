@@ -18,6 +18,17 @@ function App() {
       value = value.slice(0, 3);
     }
 
+    if (name === "number") {
+      // Remove any spaces and non-digit characters from the input value
+      value = value.replace(/\D/g, "");
+
+      // Add spaces after every fourth digit using regular expression
+      value = value.replace(/\d{4}(?=\d)/g, "$& ");
+
+      // Limit the input to 19 characters (16 digits + 3 spaces)
+      value = value.slice(0, 19);
+    }
+
     if (name === "month" || name === "year") {
       value = value.slice(0, 2);
       setCardData((prevCardData) => ({
@@ -29,14 +40,14 @@ function App() {
     }
   }
 
-  console.log(cardData);
-
   return (
     <div className="container">
       <div className="cards-container">
         <div className="front-card">
           <img src="./card-logo.svg" width={80} />
-          <p className="card-number">0000 0000 0000 0000</p>
+          <p className="card-number">
+            {cardData.number ? cardData.number : "0000 0000 0000 0000"}
+          </p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <p>{cardData.name ? cardData.name.toUpperCase() : "JOE DOE"}</p>
             <p>
@@ -66,7 +77,7 @@ function App() {
             <input
               name="number"
               value={cardData.number}
-              type="number"
+              type="text"
               placeholder="1234 5678 9123 0000"
               onChange={handleInputChange}
             />
