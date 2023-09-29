@@ -6,7 +6,7 @@ function Thanks() {
       <p style={{ color: "hsl(279, 6%, 55%)" }}>
         We've added your card details
       </p>
-      <button style={{ width: "50%" }}>Continue</button>
+      <button style={{ width: "50%", minWidth: "290px" }}>Continue</button>
     </div>
   );
 }

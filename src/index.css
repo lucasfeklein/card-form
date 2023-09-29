@@ -60,7 +60,7 @@ body {
 
 .front-card {
   background-image: url("/bg-card-front.png");
-  padding: 30px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -132,10 +132,45 @@ button {
   margin-top: 10px;
 }
 
+.card-logo {
+  width: 80px;
+}
+
 @media (max-width: 850px) {
   .container {
     background-image: url("/bg-main-mobile.png");
     flex-direction: column;
     background-size: contain;
+  }
+
+  .front-card,
+  .back-card {
+    width: 350px;
+    height: 193px;
+  }
+
+  .card-number {
+    font-size: 25px;
+  }
+
+  .card-logo {
+    width: 70px;
+  }
+
+  .cvv-number {
+    top: 85px;
+  }
+
+  .back-card {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  .front-card {
+    z-index: 1;
+    position: absolute;
+    top: 150px;
+    left: 20px;
   }
 }

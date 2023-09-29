@@ -4,7 +4,7 @@ function Cards({ cardData }: { cardData: CardData }) {
   return (
     <div className="cards-container">
       <div className="front-card">
-        <img src="./card-logo.svg" width={80} />
+        <img src="./card-logo.svg" className="card-logo" />
         <p className="card-number">
           {cardData.number
             ? cardData.number
