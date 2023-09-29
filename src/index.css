@@ -173,4 +173,12 @@ button {
     top: 150px;
     left: 20px;
   }
+
+  .inputs-container {
+    align-items: flex-start;
+  }
+
+  .thanks-container {
+    justify-content: start;
+  }
 }
