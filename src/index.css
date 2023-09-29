@@ -138,9 +138,18 @@ button {
 
 @media (max-width: 850px) {
   .container {
-    background-image: url("/bg-main-mobile.png");
+    background-image: none;
     flex-direction: column;
     background-size: contain;
+  }
+
+  .cards-container {
+    background-image: url("/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    flex: none;
+    height: 300px;
   }
 
   .front-card,
@@ -172,13 +181,5 @@ button {
     position: absolute;
     top: 150px;
     left: 20px;
-  }
-
-  .inputs-container {
-    align-items: flex-start;
-  }
-
-  .thanks-container {
-    justify-content: start;
   }
 }
