@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="container">
       <Cards cardData={cardData} />
-      {!confirm ? (
+      {confirm ? (
         <Inputs cardData={cardData} handleInputChange={handleInputChange} />
       ) : (
         <Thanks />
