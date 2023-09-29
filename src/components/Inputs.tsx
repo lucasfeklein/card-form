@@ -93,7 +93,7 @@ function Inputs({
             <input
               value={cardData.cvc}
               name="cvc"
-              type="number"
+              type="text"
               placeholder="123"
               maxLength={3}
               style={{

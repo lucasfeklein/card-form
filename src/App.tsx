@@ -76,6 +76,8 @@ function App() {
     let { name, value } = e.target;
 
     if (name === "cvc") {
+      // Remove any spaces and non-digit characters from the input value
+      value = value.replace(/\D/g, "");
       value = value.slice(0, 3);
     }
 
