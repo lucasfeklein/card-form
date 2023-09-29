@@ -3,9 +3,14 @@ import { CardData } from "../Types";
 interface InputsProps {
   cardData: CardData;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleConfirmClick: () => void;
 }
 
-function Inputs({ cardData, handleInputChange }: InputsProps) {
+function Inputs({
+  cardData,
+  handleInputChange,
+  handleConfirmClick,
+}: InputsProps) {
   return (
     <div className="inputs-container">
       <div className="second-inputs-container">
@@ -73,7 +78,7 @@ function Inputs({ cardData, handleInputChange }: InputsProps) {
             />
           </label>
         </div>
-        <button>Confirm</button>
+        <button onClick={handleConfirmClick}>Confirm</button>
       </div>
     </div>
   );

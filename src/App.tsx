@@ -15,6 +15,10 @@ function App() {
     cvc: "",
   });
 
+  function handleConfirmClick() {
+    setConfirm(true);
+  }
+
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     let { name, value } = e.target;
 
@@ -47,8 +51,12 @@ function App() {
   return (
     <div className="container">
       <Cards cardData={cardData} />
-      {confirm ? (
-        <Inputs cardData={cardData} handleInputChange={handleInputChange} />
+      {!confirm ? (
+        <Inputs
+          cardData={cardData}
+          handleInputChange={handleInputChange}
+          handleConfirmClick={handleConfirmClick}
+        />
       ) : (
         <Thanks />
       )}
