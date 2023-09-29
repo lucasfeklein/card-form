@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Cards from "./components/Cards";
 import Inputs from "./components/Inputs";
+import Thanks from "./components/Thanks";
 
 function App() {
+  const [confirm, setConfirm] = useState(false);
   const [cardData, setCardData] = useState({
     name: "",
     number: "",
@@ -44,8 +46,14 @@ function App() {
 
   return (
     <div className="container">
-      <Cards cardData={cardData} />
-      <Inputs cardData={cardData} handleInputChange={handleInputChange} />
+      {!confirm ? (
+        <>
+          <Cards cardData={cardData} />
+          <Inputs cardData={cardData} handleInputChange={handleInputChange} />
+        </>
+      ) : (
+        <Thanks />
+      )}
     </div>
   );
 }
