@@ -46,11 +46,9 @@ function App() {
 
   return (
     <div className="container">
+      <Cards cardData={cardData} />
       {!confirm ? (
-        <>
-          <Cards cardData={cardData} />
-          <Inputs cardData={cardData} handleInputChange={handleInputChange} />
-        </>
+        <Inputs cardData={cardData} handleInputChange={handleInputChange} />
       ) : (
         <Thanks />
       )}
