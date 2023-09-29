@@ -14,9 +14,62 @@ function App() {
     },
     cvc: "",
   });
+  const [errorMessage, setErrorMessage] = useState({
+    name: "",
+    number: "",
+    expDate: {
+      month: "",
+      year: "",
+    },
+    cvc: "",
+  });
 
   function handleConfirmClick() {
-    setConfirm(true);
+    const errors: {
+      name: string;
+      number: string;
+      expDate: {
+        month: string;
+        year: string;
+      };
+      cvc: string;
+    } = {
+      name: "",
+      number: "",
+      expDate: {
+        month: "",
+        year: "",
+      },
+      cvc: "",
+    }; // Initialize errors object with the correct structure
+    let hasError = false;
+
+    if (cardData.name.trim() === "") {
+      errors.name = "Can't be blank";
+      hasError = true;
+    }
+    if (cardData.number.trim() === "") {
+      errors.number = "Can't be blank";
+      hasError = true;
+    }
+    if (cardData.expDate.month.trim() === "") {
+      errors.expDate.month = "Can't be blank";
+      hasError = true;
+    }
+    if (cardData.expDate.year.trim() === "") {
+      errors.expDate.year = "Can't be blank";
+      hasError = true;
+    }
+    if (cardData.cvc.trim() === "") {
+      errors.cvc = "Can't be blank";
+      hasError = true;
+    }
+
+    setErrorMessage(errors);
+
+    if (!hasError) {
+      setConfirm(true);
+    }
   }
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -45,6 +98,7 @@ function App() {
       }));
     } else {
       setCardData((prevCardData) => ({ ...prevCardData, [name]: value }));
+      setErrorMessage((prevError) => ({ ...prevError, [name]: "" }));
     }
   }
 
@@ -54,6 +108,7 @@ function App() {
       {!confirm ? (
         <Inputs
           cardData={cardData}
+          errorMessage={errorMessage}
           handleInputChange={handleInputChange}
           handleConfirmClick={handleConfirmClick}
         />

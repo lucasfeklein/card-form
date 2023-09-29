@@ -2,14 +2,20 @@ import { CardData } from "../Types";
 
 interface InputsProps {
   cardData: CardData;
+  errorMessage: CardData;
   handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   handleConfirmClick: () => void;
 }
+
+const errorBorderStyle = {
+  border: "1px solid red",
+};
 
 function Inputs({
   cardData,
   handleInputChange,
   handleConfirmClick,
+  errorMessage,
 }: InputsProps) {
   return (
     <div className="inputs-container">
@@ -22,7 +28,9 @@ function Inputs({
             type="text"
             placeholder="Joe Doe"
             onChange={handleInputChange}
+            style={errorMessage.name ? errorBorderStyle : {}}
           />
+          {errorMessage.name && <p className="error">{errorMessage.name}</p>}
         </label>
         <label className="label-container">
           CARD NUMBER
@@ -32,7 +40,11 @@ function Inputs({
             type="text"
             placeholder="1234 5678 9123 0000"
             onChange={handleInputChange}
+            style={errorMessage.number ? errorBorderStyle : {}}
           />
+          {errorMessage.number && (
+            <p className="error">{errorMessage.number}</p>
+          )}
         </label>
         <div style={{ display: "flex", gap: "15px" }}>
           <div>
@@ -73,9 +85,13 @@ function Inputs({
               type="number"
               placeholder="123"
               maxLength={3}
-              style={{ width: "100%" }}
+              style={{
+                width: "100%",
+                border: errorMessage.cvc ? "1px solid red" : "",
+              }}
               onChange={handleInputChange}
             />
+            {errorMessage.cvc && <p className="error">{errorMessage.cvc}</p>}
           </label>
         </div>
         <button onClick={handleConfirmClick}>Confirm</button>

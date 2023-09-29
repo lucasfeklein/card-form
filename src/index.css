@@ -137,6 +137,11 @@ button {
   width: 80px;
 }
 
+.error {
+  color: hsl(0, 100%, 66%);
+  letter-spacing: 0;
+}
+
 @media (max-width: 850px) {
   .container {
     background-image: none;
