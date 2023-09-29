@@ -59,7 +59,10 @@ function Inputs({
                 <input
                   value={cardData.expDate.month}
                   name="month"
-                  style={{ width: "70px" }}
+                  style={{
+                    width: "70px",
+                    border: errorMessage.expDate.month ? "1px solid red" : "",
+                  }}
                   type="number"
                   maxLength={2}
                   placeholder="MM"
@@ -68,13 +71,21 @@ function Inputs({
                 <input
                   value={cardData.expDate.year}
                   name="year"
-                  style={{ width: "70px" }}
+                  style={{
+                    width: "70px",
+                    border: errorMessage.expDate.year ? "1px solid red" : "",
+                  }}
                   type="number"
                   maxLength={2}
                   placeholder="YY"
                   onChange={handleInputChange}
                 />
               </div>
+              {(errorMessage.expDate.month || errorMessage.expDate.year) && (
+                <p className="error">
+                  {errorMessage.expDate.month || errorMessage.expDate.year}
+                </p>
+              )}
             </label>
           </div>
           <label style={{ width: "100%" }} className="label-container">

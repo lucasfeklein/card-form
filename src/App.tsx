@@ -96,6 +96,10 @@ function App() {
         ...prevCardData,
         expDate: { ...prevCardData.expDate, [name]: value },
       }));
+      setErrorMessage((prevError) => ({
+        ...prevError,
+        expDate: { ...prevError.expDate, [name]: "" },
+      }));
     } else {
       setCardData((prevCardData) => ({ ...prevCardData, [name]: value }));
       setErrorMessage((prevError) => ({ ...prevError, [name]: "" }));
