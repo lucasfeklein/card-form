@@ -8,4 +8,8 @@ A junior Frontend challenge fully responsive interactive card details form from 
 
 ## Desktop preview
 
+![Desktop](./public/desktop-preview.png)
+
 ## Mobile preview
+
+<img src='./public/mobile-preview.png' width="400"/>
