@@ -112,7 +112,10 @@ input::placeholder {
 
 input:focus {
   outline: none;
-  border: 1px solid hsl(249, 99%, 64%);
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, hsl(249, 99%, 64%), hsl(278, 94%, 30%))
+      border-box;
+  border: 1px solid transparent;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
